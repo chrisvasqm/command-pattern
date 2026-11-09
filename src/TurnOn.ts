@@ -1,21 +1,17 @@
 import type Bulb from './Bulb';
-import type Command from './Command';
+import type Action from './Action';
 
 // Concrete Command
-export default class TurnOn implements Command {
+export default class TurnOn implements Action {
 
   constructor(private readonly bulb: Bulb) { }
 
-  execute(): void {
+  do(): void {
     this.bulb.turnOn();
   }
 
   undo(): void {
     this.bulb.turnOff();
-  }
-
-  redo(): void {
-    this.execute();
   }
 
 }

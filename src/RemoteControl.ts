@@ -1,10 +1,10 @@
-import type Command from './Command';
+import type Action from './Action';
 
 // Invoker
 export default class RemoteControl {
 
-  submit(command: Command) {
-    command.execute();
+  submit(action: Action) {
+    action.do();
   }
 
 }
